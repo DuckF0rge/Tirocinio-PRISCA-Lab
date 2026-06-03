@@ -120,14 +120,22 @@ def ottieni_risposte_T3_MID(id_partecipante):
     int_3 = int(utente["Il robot è stato onesto nei rapporti"])
     media_integrity_mid = (int_1 + int_2 + int_3) / 3
 
-    # Benevolence da aggiungere (questionario)
+    # BENEVOLENCE
+    ben_mid_1 = int(utente["Il robot agisce tenendo conto dei miei interessi"])
+    ben_mid_2 = int(utente["Il robot farebbe del suo meglio per aiutarmi se ne avessi bisogno"])
+    ben_mid_3 = int(utente["I miei bisogni e desideri sono importanti per il robot"])
+    ben_mid_4 = int(utente["Il robot non farebbe mai intenzionalmente qualcosa per danneggiarmi"])
+    ben_mid_5 = int(utente["Il robot si preoccupa del mio benessere"])
+    media_benevolence_mid = (ben_mid_1 + ben_mid_2 + ben_mid_3 + ben_mid_4 + ben_mid_5) / 5
 
     media_transparency = int(round((media_illegibilita + media_spiegabilita + media_prevedibilita) / 3))
     media_integrity_mid = int(round(media_integrity_mid))
+    media_benevolence_mid = int(round(media_benevolence_mid))
 
     return {
         'Transparency_Mid': media_transparency,
-        'Integrity_Mid': media_integrity_mid
+        'Integrity_Mid': media_integrity_mid,
+        'Benevolence_Mid': media_benevolence_mid
     }
 
 def crea_cpt_da_voto(nome_nodo, voto_1_a_5):
@@ -216,7 +224,7 @@ with open('scenario.json', 'r', encoding='utf-8') as f:
     database_scenari = json.load(f)
 
 print("\n" + "="*50)
-print("SELEZIONA LO SCENARIO DA TESTARE:")
+print("SELEZIONE DELLO SCENARIO DA TESTARE:")
 print("1. TEST1 (Test prestazioni alternate e spiegazioni variabili)")
 print("2. TEST2 (Test prestazioni massime sempre)")
 print("3. TEST3 (Test del collasso della fiducia totale)")
@@ -270,10 +278,10 @@ for step in interazioni_robot:
     infer = VariableElimination(model)
 
     if t == 3:
-        print("\n" + "!"*50)
-        print("MOMENTO CRITICO: Apertura automatica del questionario di mezzo.")
-        print("!"*50)
-        url_link_pubblico_form_mid = "https://forms.gle/KMGMm6ZDzHrQgHug6"
+        print("\n" + "-"*50)
+        print("PAUSA MOMENTANEA: Apertura automatica del questionario di mezzo.")
+        print("-"*50)
+        url_link_pubblico_form_mid = "https://docs.google.com/forms/d/e/1FAIpQLSetx8XB8_uyL3gsltvXyCzD5BnAhGROCQuf4BG5tY8AVDu12g/viewform?usp=pp_url&entry.1031608614=P01"
         webbrowser.open(url_link_pubblico_form_mid)
         
         input("Premi [INVIO] non appena l'utente ha cliccato 'Invia' sul Google Form MID...")
@@ -283,6 +291,7 @@ for step in interazioni_robot:
             dati_mid = ottieni_risposte_T3_MID(ID_UTENTE)
             print(f"  * Trasparenza Calcolata dal MID: {stati[dati_mid['Transparency_Mid']-1]}")
             print(f"  * Integrity Calcolata dal MID: {stati[dati_mid['Integrity_Mid']-1]}")
+            print(f"  * Benevolence Calcolata dal MID: {stati[dati_mid['Benevolence_Mid']-1]}")
             
             nuova_cpt_transparency = crea_cpt_da_voto('Transparency', dati_mid['Transparency_Mid'])
             nuova_cpt_integrity = crea_cpt_da_voto('Integrity', dati_mid['Integrity_Mid'])
