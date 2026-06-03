@@ -60,8 +60,8 @@ def ottieni_risposte_T0(id_partecipante):
     return {
         'Propensity_to_Trust': propensity_globale,
         'Integrity_Prior': integrity_iniziale, 
-        'InitialPropensityRisk': int(utente_corretto["In generale, quanto sei propenso ad accettare un rischio durante l'utilizzo di una nuova tecnologia?"]),
-        'Criticality': int(utente_corretto["Quanto consideri critico o pericoloso il compito che il robot sta per svolgere in questo studio?"])
+        'InitialPropensityRisk': int(utente_corretto["In generale, quanto sei propenso ad accettare un rischio durante l'utilizzo di una nuova tecnologia"]),
+        'Criticality': int(utente_corretto["Quanto consideri critico o pericoloso il compito che il robot sta per svolgere in questo studio"])
     }
 
 def ottieni_risposte_T3_MID(id_partecipante):
@@ -168,9 +168,9 @@ model = DiscreteBayesianNetwork([
 print("="*50)
 print("SETUP ESPERIMENTO HRI")
 print("="*50)
-ID_UTENTE = input("Inserisci l'ID del partecipante per questa sessione (es. P01, P02...): ").strip()
+ID_UTENTE = input("Inserire l'ID del partecipante per questa sessione (es. P01, P02...): ").strip()
 
-print(f"\n[Attendere...] Connessione a Google Sheets per scaricare i dati T0 di {ID_UTENTE}...")
+print(f"\nConnessione a Google Sheets per scaricare i dati T0 di {ID_UTENTE}...")
 dati_utente = ottieni_risposte_T0(ID_UTENTE)
 print("Dati T0 scaricati con successo! Avvio Rete Bayesiana...")
 
