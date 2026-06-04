@@ -279,14 +279,14 @@ for step in interazioni_robot:
 
     if t == 3:
         print("\n" + "-"*50)
-        print("PAUSA MOMENTANEA: Apertura automatica del questionario di mezzo.")
+        print("PAUSA MOMENTANEA: Apertura automatica del questionario di mezzo")
         print("-"*50)
         url_link_pubblico_form_mid = "https://docs.google.com/forms/d/e/1FAIpQLSetx8XB8_uyL3gsltvXyCzD5BnAhGROCQuf4BG5tY8AVDu12g/viewform?usp=pp_url&entry.1031608614=P01"
         webbrowser.open(url_link_pubblico_form_mid)
         
-        input("Premi [INVIO] non appena l'utente ha cliccato 'Invia' sul Google Form MID...")
+        input("Premi [INVIO] non appena l'utente ha cliccato 'Invia' sul Google Form MID")
         
-        print("\nLettura dei dati MID da Google Sheets in corso...")
+        print("\nLettura dei dati MID da Google Sheets in corso")
         try:
             dati_mid = ottieni_risposte_T3_MID(ID_UTENTE)
             print(f"  * Trasparenza Calcolata dal MID: {stati[dati_mid['Transparency_Mid']-1]}")
@@ -305,5 +305,5 @@ for step in interazioni_robot:
         except Exception as e:
             print(f"Impossibile leggere i dati medi o aggiornare la rete: {e}")
             
-        print("\nRipresa dell'esperimento...")
+        print("\nRipresa dell'esperimento")
         print("="*50)
