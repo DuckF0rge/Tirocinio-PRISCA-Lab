@@ -8,7 +8,8 @@ def connetti_google_sheets(url_foglio):
     return client.open_by_url(url_foglio).sheet1
 
 def scarica_database_T0():
-    url_t0 = "https://docs.google.com/spreadsheets/d/19FiqEfbQGqWZTRgBYmevrhzcSBdt1jh6oquyz8sIMhc/edit?usp=sharing"
+    # url_t0 = "https://docs.google.com/spreadsheets/d/19FiqEfbQGqWZTRgBYmevrhzcSBdt1jh6oquyz8sIMhc/edit?usp=sharing"
+    url_t0 = "https://docs.google.com/spreadsheets/d/1IWyk24hZQsDJtduFZgFgYAv8L2mUT1vg_0mG_1CyI1I/edit?usp=sharing" # Estrazione per scenario medico
     sheet = connetti_google_sheets(url_t0)
     tutti_i_record = sheet.get_all_records()
     
@@ -49,13 +50,13 @@ def scarica_database_T0():
                 'InitialPropensityRisk': int(utente["In generale, quanto sei propenso ad accettare un rischio durante l'utilizzo di una nuova tecnologia"])
             }
         except Exception as e:
-            # Se un utente ha lasciato celle vuote, lo ignora e passa al prossimo senza far crashare il programma
             continue
             
     return database_t0
 
 def scarica_database_MID():
-    url_mid = "https://docs.google.com/spreadsheets/d/18qulPTiSaEpmDKAPZFW7hi6s1Ev0kUINDvuKSiHrTfk/edit?usp=sharing"
+    # url_mid = "https://docs.google.com/spreadsheets/d/18qulPTiSaEpmDKAPZFW7hi6s1Ev0kUINDvuKSiHrTfk/edit?usp=sharing"
+    url_mid = "https://docs.google.com/spreadsheets/d/1ko6eqUSZnfZLH-U70o2tK3Rd9YjMcYznv2VXxCZsFlA/edit?usp=sharing" #url per estrazione scenario medico
     sheet = connetti_google_sheets(url_mid)
     tutti_i_record = sheet.get_all_records()
     

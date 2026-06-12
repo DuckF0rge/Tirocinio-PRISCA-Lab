@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Nome del file generato in precedenza
-FILE_INPUT = "risultati_esperimento.txt"
+FILE_INPUT = "risultati_esperimento_finanziario.txt"
 
 # Funzione per assegnare l'archetipo in base all'ID (da P01 a P100)
 def assegna_gruppo(user_id):
@@ -67,7 +67,7 @@ plt.figure(figsize=(12, 7))
 ax = sns.lineplot(
     data=df, 
     x="Round", 
-    y="Delta Trust (%)",  # <--- Ora plottiamo il Delta
+    y="Delta Trust (%)",
     hue="Gruppo", 
     palette=["#e74c3c", "#2ecc71", "#3498db"],
     marker="o", 
@@ -87,5 +87,5 @@ plt.xticks(range(0, 7))
 plt.legend(title="Archetipo Psicologico", bbox_to_anchor=(1.05, 1), loc='upper left')
 
 plt.tight_layout()
-plt.savefig("grafico_delta_trust_finale.png", dpi=300)
+plt.savefig("grafico_finanziario.png", dpi=300)
 plt.show()

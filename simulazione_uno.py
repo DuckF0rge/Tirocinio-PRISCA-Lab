@@ -12,7 +12,7 @@ from google_sheets_extractor import scarica_database_T0, scarica_database_MID
 stati = ['Basso', 'Medio-basso', 'Neutro', 'Medio-alto', 'Alto']
 card = len(stati)
 CRITICALITY_TASK = 4 
-FILE_OUTPUT = "risultati_esperimento.txt"
+FILE_OUTPUT = "risultati_esperimento_finanziario.txt"
 
 # Lista degli ID da testare (da P01 a P100)
 lista_utenti = [f"P{str(i).zfill(2)}" for i in range(1, 101)]

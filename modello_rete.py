@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     cpd_trustworthiness = genera_cpt_multi('Trustworthiness', ['Ability', 'Benevolence', 'Integrity'], direzioni=[1, 1, 1], pesi=[3.0, 3.0, 1.0])
     cpd_risk_taking = genera_cpt_multi('Risk_Taking', ['Trustworthiness', 'Perceived_Risk', 'InitialPropensityRisk'], direzioni=[1, -1, 1], pesi=[4.0, 1.5, 1.0])
-    cpd_trust = genera_cpt_multi('Trust', ['Risk_Taking', 'Propensity_to_Trust', 'Trustworthiness', 'Transparency'], direzioni=[1, 1, 1, 1], pesi=[1.0, 0.5, 4.0, 1.5])
+    cpd_trust = genera_cpt_multi('Trust', ['Risk_Taking', 'Propensity_to_Trust', 'Trustworthiness', 'Transparency'], direzioni=[1, 1, 1, 1], pesi=[1.0, 0.5, 4.0, 1.5]) # DA MODIFICARE
 
     model.add_cpds(cpd_task_success, cpd_helpfulness, cpd_transparency, cpd_criticality, cpd_initial_risk, cpd_prop_trust, cpd_integrity, 
                    cpd_ability, cpd_benevolence, cpd_perceived_risk, cpd_trustworthiness, cpd_risk_taking, cpd_trust)
