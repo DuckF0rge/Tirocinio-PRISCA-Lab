@@ -92,7 +92,7 @@ plt.axvline(x=3, color='black', linestyle='--', alpha=0.5)
 plt.text(3.05, 1.1, 'Violazione Fiducia (Round 3)', color='black', fontsize=10, fontstyle='italic')
 
 plt.axvline(x=4, color='green', linestyle='--', alpha=0.5)
-plt.text(4.05, 1.1, 'Recupero (Round 4)', color='green', fontsize=10, fontstyle='italic')
+plt.text(4.05, 1.4, 'Recupero (Round 4)', color='green', fontsize=10, fontstyle='italic')
 
 plt.title("Dinamiche di Trust nell'Interazione HRI\nScenario 1: Consulente Finanziario", fontsize=16, fontweight='bold', pad=20)
 plt.xlabel("Round di Interazione", fontsize=12)

@@ -98,7 +98,7 @@ plt.axvline(x=3, color='black', linestyle='--', alpha=0.5)
 plt.text(3.05, 1.1, 'Errore Medico (Round 3)', color='black', fontsize=10, fontstyle='italic')
 
 plt.axvline(x=4, color='green', linestyle='--', alpha=0.5)
-plt.text(4.05, 1.1, 'Recupero e Scuse (Round 4)', color='green', fontsize=10, fontstyle='italic')
+plt.text(4.05, 1.4, 'Recupero e Scuse (Round 4)', color='green', fontsize=10, fontstyle='italic')
 
 # Posizioniamo la legenda fuori per pulizia visiva
 plt.legend(title='Archetipi di Pazienti', bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=11, title_fontsize=12)
