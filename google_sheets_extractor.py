@@ -104,11 +104,11 @@ def scarica_database_MID():
             int_3 = int(utente["Il robot è stato onesto nei rapporti"])
             media_integrity_mid = (int_1 + int_2 + int_3) / 3
 
-            ben_mid_1 = int(utente["Il robot ha agito tenendo conto dei miei interessi"])
-            ben_mid_2 = int(utente["Il robot ha fatto del suo meglio per aiutarmi nel momento del bisogno"])
-            ben_mid_3 = int(utente["I miei bisogni e desideri sono stati importanti per il robot"])
-            ben_mid_4 = int(utente["Il robot non ha fatto mai nulla intenzionalmente per danneggiarmi"])
-            ben_mid_5 = int(utente["Il robot si è preoccupato del mio benessere"])
+            ben_mid_1 = int(utente["Il robot è molto attento al mio benessere durante il compito"])
+            ben_mid_2 = int(utente["I miei bisogni e desideri sono molto importanti per il robot"])
+            ben_mid_3 = int(utente["Il robot non ha fatto consapevolmente nulla per influenzare negativamente la mia performance durante il compito"])
+            ben_mid_4 = int(utente["Il robot si preoccupa realmente di ciò che è importante per me"])
+            ben_mid_5 = int(utente["Il robot non farà di tutto per aiutarmi"])
             media_benevolence_mid = (ben_mid_1 + ben_mid_2 + ben_mid_3 + ben_mid_4 + ben_mid_5) / 5
 
             abi_mid = int(utente["Il robot è stato abile nel guidarmi al completamento del task"])
