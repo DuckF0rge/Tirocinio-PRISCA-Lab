@@ -3,7 +3,7 @@ import itertools
 from pgmpy.models import DiscreteBayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.inference import VariableElimination
-from google_sheets_extractor import ottieni_risposte_T0, ottieni_risposte_T3_MID
+from google_sheets_extractor import scarica_database_T0
 
 # ====================================
 # DEFINIZIONE STATI E FUNZIONI CPT
@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     print(f"\n[Attendere...] Connessione a Google Sheets per l'utente {ID_UTENTE}...")
     try:
-        dati_utente = ottieni_risposte_T0(ID_UTENTE)
+        dati_utente = scarica_database_T0(ID_UTENTE)
         print("   -> Dati T0 scaricati con successo.")
     except Exception as e:
         print(f"   -> [ERRORE CRITICO] Impossibile procedere: {e}")
